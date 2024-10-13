@@ -1,0 +1,65 @@
+.profile {
+  min-height: 100vh;
+  background: url(/background.png) no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-container {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 50%;
+  border-radius: 10px;
+}
+.profile form img {
+  object-fit: cover;
+
+  border-radius: 50%;
+  width: 4rem;
+  aspect-ratio: 1/1;
+}
+.profile-pic-big {
+  width: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  margin: 1.5rem auto;
+}
+
+.profile form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3rem;
+  width: 50%;
+}
+.profile from h3 {
+  font-weight: 500;
+}
+
+.profile label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.profile form input,
+textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--white-color);
+}
+
+.profile form button {
+  background: var(--secondary-color);
+  padding: 0.6rem;
+  color: var(--white-color);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

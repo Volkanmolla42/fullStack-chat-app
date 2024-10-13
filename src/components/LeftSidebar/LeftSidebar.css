@@ -1,0 +1,205 @@
+.ls {
+  background: var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 5px;
+}
+
+.ls-top {
+  padding: 10px 15px;
+}
+
+.ls-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.ls-nav .logo {
+  max-width: 140px;
+}
+
+.ls-nav .menu img {
+  max-height: 20px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.ls-search {
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  margin-top: 10px;
+}
+
+.ls-search img {
+  width: 16px;
+}
+
+.ls-search input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--white-color);
+  font-size: 0.9rem;
+}
+
+.ls-search input::placeholder {
+  color: var(--white-color);
+}
+
+.ls-list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.friends {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 20px;
+  border-bottom: 2px solid var(--light-secondary-color);
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+  margin: 2px 0;
+  opacity: 0.5;
+}
+
+.friends .friends-pic {
+  object-fit: cover;
+
+  width: 3rem;
+  height: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.friends div {
+  display: flex;
+  flex-direction: column;
+}
+
+.friends p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--light-secondary-color);
+}
+
+.friends .msg-div div {
+  width: auto;
+  max-width: 150px;
+  height: 30px;
+  font-size: 0.8rem;
+  color: var(--light-gray-color);
+  margin-left: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.friends .msg-div div span {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  gap: 10px;
+  position: relative;
+}
+
+.friends .msg-div div .img-msg-div span {
+  font-weight: 700;
+  font-size: 1rem;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.friends .msg-div div .img-msg-div {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  gap: 10px;
+}
+
+.friends .msg-div div img {
+  height: 80%;
+}
+
+.add-user img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.friends:hover {
+  background-color: var(--secondary-color);
+  opacity: 0.8;
+}
+
+.friends:hover p {
+  color: var(--white-color);
+}
+
+.friends:hover span {
+  color: var(--white-color);
+}
+.friends.border {
+  border: 2px solid var(--light-secondary-color);
+  opacity: 1;
+}
+.friends.border div span {
+  font-weight: 500;
+  color: white;
+}
+
+.friends-active {
+  background: linear-gradient(
+    to bottom right,
+    var(--dark-color),
+    var(--secondary-color)
+  );
+  opacity: 1;
+}
+
+.friends-active .msg-div div span {
+  color: var(--light-secondary-color);
+}
+.friends-active:hover {
+  background-color: var(--light-secondary-color);
+}
+
+.ls-nav .menu {
+  position: relative;
+  z-index: 1;
+}
+
+.menu .sub-menu-list {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  width: 130px;
+  padding: 20px;
+  border-radius: 5px;
+  background: var(--white-color);
+  color: var(--black-color);
+}
+
+.menu hr {
+  border: none;
+  height: 1px;
+  background-color: var(--light-secondary-color);
+  margin: 8px 0;
+}
+
+.sub-menu-list p {
+  cursor: pointer;
+  font-size: 1rem;
+}
