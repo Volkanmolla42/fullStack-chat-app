@@ -27,7 +27,7 @@ const Login = () => {
         <h2>{isNewUser ? "Sign Up" : "Log In"} </h2>
         {isNewUser ? (
           <input
-            autoComplete="false"
+            autoComplete="off"
             type="text"
             placeholder="Username"
             required
@@ -38,7 +38,7 @@ const Login = () => {
         ) : null}
 
         <input
-          autoComplete="false"
+          autoComplete="off"
           type="email"
           placeholder="Email adress"
           required
@@ -47,7 +47,7 @@ const Login = () => {
           value={email}
         />
         <input
-          autoComplete="false"
+          autoComplete="off"
           type="password"
           placeholder="Password"
           required
@@ -60,7 +60,7 @@ const Login = () => {
         </button>
         {isNewUser ? (
           <div className="login-term">
-            <input type="checkbox" id="term" />
+            <input type="checkbox" id="term" required />
             <label htmlFor="term">
               Agree to the terms of use & privacy policy
             </label>

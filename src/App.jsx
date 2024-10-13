@@ -2,7 +2,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Login from "./pages/login/login";
 import Chat from "./pages/Chat/Chat";
 import ProfileUpdate from "./pages/ProfileUpdate/ProfileUpdate";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useContext, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
@@ -17,10 +17,10 @@ const App = () => {
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        navigate("/chat");
+        navigate("/chat", { replace: true });
         await loadUserData(user.uid);
       } else {
-        navigate("/");
+        navigate("/", { replace: true });
       }
     });
     return () => {};

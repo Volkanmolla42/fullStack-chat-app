@@ -25,9 +25,9 @@ const LeftSidebar = () => {
 
   const [user, setUser] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
-  const searchInputRef = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeFriend, setActiveFriend] = useState(undefined);
+  const searchInputRef = useRef();
 
   const inputHandler = async (e) => {
     const inputValue = e.target.value.trim().toLowerCase();
@@ -127,6 +127,7 @@ const LeftSidebar = () => {
 
         setChatUser(newChat);
         setMessagesId(newMessageRef.id);
+        setActiveFriend(newMessageRef.id);
         await updateChat(newChat);
       }
     } catch (error) {
@@ -164,6 +165,11 @@ const LeftSidebar = () => {
 
   const handleLogout = async () => {
     try {
+      setUser(null);
+      setShowSearch(false);
+      setIsMenuOpen(false);
+      setActiveFriend(undefined);
+      setMessagesId(null);
       setChatUser(null);
       await logout();
     } catch (error) {
@@ -175,7 +181,6 @@ const LeftSidebar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  //DOM
   return (
     <div className="ls">
       <div className="ls-top">
@@ -199,7 +204,7 @@ const LeftSidebar = () => {
             className="search-icon"
           />
           <input
-            autoComplete="false"
+            autoComplete="off"
             ref={searchInputRef}
             onChange={inputHandler}
             type="text"
@@ -212,7 +217,7 @@ const LeftSidebar = () => {
           <div onClick={handleAddChat} className="friends add-user">
             <img
               className="friends-pic"
-              src={user.avatar}
+              src={user.avatar || assets.avatar_icon}
               alt="user profile image"
             />
             <p>{user.name}</p>
@@ -234,7 +239,7 @@ const LeftSidebar = () => {
                 } ${activeFriend === item.messageId ? "friends-active" : ""} `}
               >
                 <img
-                  src={item.userData?.avatar || assets.default_avatar}
+                  src={item.userData?.avatar || assets.avatar_icon}
                   className="friends-pic"
                   alt="profile-pic"
                 />

@@ -20,11 +20,11 @@ import { toast } from "react-toastify";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "chatapp3-a3543.firebaseapp.com",
-  projectId: "chatapp3-a3543",
-  storageBucket: "chatapp3-a3543.appspot.com",
-  messagingSenderId: "807118890111",
-  appId: "1:807118890111:web:347f437b1d5184c4464b4a",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

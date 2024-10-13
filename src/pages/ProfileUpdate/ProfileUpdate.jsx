@@ -21,10 +21,6 @@ const ProfileUpdate = () => {
   const profileUpdate = async (e) => {
     e.preventDefault();
     try {
-      if (!prevImage && !image) {
-        toast.error("Upload profile picture");
-        return; // Form gönderimini durdur
-      }
       const docRef = doc(db, "users", uid);
       if (image) {
         const imgUrl = await upload(image);
@@ -42,7 +38,7 @@ const ProfileUpdate = () => {
       }
       const snap = await getDoc(docRef);
       setUserData(snap.data());
-      navigate("/chat");
+      navigate("/chat", { replace: "true" });
     } catch (error) {
       console.error(error);
       toast.error("An error occurred. Please try again.");
@@ -59,7 +55,7 @@ const ProfileUpdate = () => {
         if (docSnap.data().bio) setBio(docSnap.data().bio);
         if (docSnap.data().avatar) setPrevImage(docSnap.data().avatar);
       } else {
-        navigate("/");
+        navigate("/", { replace: true });
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

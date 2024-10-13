@@ -147,7 +147,11 @@ const Chatbox = ({ toggleProfile }) => {
   return chatUser ? (
     <div className="chat-box">
       <div className="chat-user" onClick={toggleProfile}>
-        <img id="chat-user-pic" src={chatUser.userData.avatar} alt="profile" />
+        <img
+          id="chat-user-pic"
+          src={chatUser.userData.avatar || assets.avatar_icon}
+          alt="profile"
+        />
         <p>
           <span>{chatUser.userData.name}</span>
           {isOnline && <img src={assets.green_dot} className="dot" alt="" />}
@@ -188,6 +192,7 @@ const Chatbox = ({ toggleProfile }) => {
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
         <input
+          autoComplete="off"
           onChange={sendImage}
           type="file"
           id="image"
