@@ -94,6 +94,23 @@ button {
   display: flex;
   flex-direction: column-reverse;
 }
+.msg {
+  display: flex;
+  height: auto;
+  gap: 8px;
+  color: white;
+  background-color: var(--dark-color);
+
+  max-width: 100%;
+  border-radius: 10px 0px 10px 10px;
+  padding: 8px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  word-spacing: 0.5px;
+  letter-spacing: 0.9px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
 
 .s-msg,
 .r-msg {
@@ -108,21 +125,8 @@ button {
   justify-content: start;
 }
 
-.msg {
-  display: flex;
-  height: auto;
-  gap: 8px;
-  color: white;
-  background: var(--secondary-color);
-  max-width: 100%;
-  border-radius: 10px 0px 10px 10px;
-  padding: 8px;
-  margin-bottom: 5px;
-  font-weight: 400;
-  word-spacing: 0.5px;
-  letter-spacing: 0.9px;
-  overflow-wrap: break-word;
-  word-break: break-all;
+.r-msg .msg {
+  background-color: var(--secondary-color);
 }
 
 .msg span {
@@ -142,7 +146,9 @@ button {
   font-size: 0.8rem;
   max-width: 70%;
 }
-
+.s-msg .msg-img-container span {
+  background-color: var(--dark-color);
+}
 .msg-img-container {
   position: relative;
   padding: 5px;
@@ -152,7 +158,7 @@ button {
   position: absolute;
   bottom: 15px;
   right: 10px;
-  background-color: var(--secondary-color);
+  background-color: var(--light-secondary-color);
   border-radius: 20%;
   padding: 3px;
 }

@@ -70,12 +70,11 @@
   cursor: pointer;
   transition: background-color 0.2s ease-out;
   margin: 2px 0;
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 .friends .friends-pic {
   object-fit: cover;
-
   width: 3rem;
   height: 3rem;
   aspect-ratio: 1;
@@ -116,7 +115,7 @@
 .friends .msg-div div .img-msg-div span {
   font-weight: 700;
   font-size: 1rem;
-  opacity: 0.5;
+  opacity: 0.4;
   font-style: italic;
 }
 
@@ -170,9 +169,13 @@
 }
 
 .friends-active .msg-div div span {
-  color: var(--light-secondary-color);
+  color: var(--white-color);
+}
+.friends-active .msg-div p {
+  color: var(--white-color);
 }
 .friends-active:hover {
+  opacity: 1;
   background-color: var(--light-secondary-color);
 }
 

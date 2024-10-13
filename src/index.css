@@ -40,10 +40,10 @@ img.dot {
 }
 
 :root {
-  --dark-color: #2e073f;
-  --secondary-color: #7a1cac;
-  --light-secondary-color: #e2b1fa;
-  --white-color: #ebd3f8;
+  --dark-color: #1f1f1f;
+  --secondary-color: #a91d3a;
+  --light-secondary-color: #c73659;
+  --white-color: #eeeeee;
   --black-color: #000000;
-  --light-gray-color: #9e9e9ece;
+  --light-gray-color: #d3d3d3ce;
 }
