@@ -92,12 +92,15 @@ const ProfileUpdate = () => {
             type="text"
             placeholder="Your name"
             required
+            maxLength={20}
+            autoComplete="off"
           />
           <textarea
             onChange={(e) => setBio(e.target.value)}
             value={bio}
             placeholder="Write profile bio"
             required
+            autoComplete="off"
           ></textarea>
           <button type="submit">Save</button>
         </form>

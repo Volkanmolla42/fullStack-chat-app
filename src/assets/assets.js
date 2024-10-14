@@ -8,12 +8,13 @@ import menu_icon from "./menu_icon.png";
 import arrow_icon from "./arrow_icon.png";
 import green_dot from "./green_dot.png";
 import chat_image from "./image-regular.svg";
+import logout_icon from "./logout-icon.svg";
 
 const assets = {
   chat_image,
   avatar_icon,
   gallery_icon,
-
+  logout_icon,
   profile_img,
   search_icon,
   send_button,

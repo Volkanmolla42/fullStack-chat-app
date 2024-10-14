@@ -25,7 +25,6 @@ const LeftSidebar = () => {
 
   const [user, setUser] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeFriend, setActiveFriend] = useState(undefined);
   const searchInputRef = useRef();
 
@@ -167,7 +166,6 @@ const LeftSidebar = () => {
     try {
       setUser(null);
       setShowSearch(false);
-      setIsMenuOpen(false);
       setActiveFriend(undefined);
       setMessagesId(null);
       setChatUser(null);
@@ -177,32 +175,28 @@ const LeftSidebar = () => {
     }
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <div className="ls">
       <div className="ls-top">
-        <div className="ls-nav">
-          <div className="ls-profile">
-            <img
-              src={userData.avatar || assets.avatar_icon}
-              alt="profile image"
-            />
-            <span>ChatApp</span>
-          </div>
-          <div className="menu" onClick={toggleMenu}>
-            <img src={assets.menu_icon} className="menu-icon" alt="menu icon" />
-            {isMenuOpen && (
-              <div className="sub-menu-list">
-                <p onClick={() => navigate("/profile")}>Edit Profile</p>
-                <hr />
-                <p onClick={handleLogout}>Logout</p>
-              </div>
-            )}
+        <div className="ls-profile">
+          <img
+            className="ls-profile-img"
+            onClick={() => navigate("/profile")}
+            src={userData.avatar || assets.avatar_icon}
+            alt="profile image"
+          />
+          <span>ChatApp</span>
+          <div className="logout">
+            <button>
+              <img
+                onClick={handleLogout}
+                src={assets.logout_icon}
+                alt="log out button"
+              />
+            </button>
           </div>
         </div>
+
         <div className="ls-search">
           <img
             src={assets.search_icon}

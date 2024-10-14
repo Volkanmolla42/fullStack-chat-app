@@ -8,34 +8,43 @@
 }
 
 .ls-top {
-  padding: 5px 10px;
+  cursor: default;
+  padding: 20px 15px;
 }
 
-.ls-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-
-.ls-nav .menu img {
-  max-height: 20px;
-  opacity: 0.6;
-  cursor: pointer;
-}
 .ls-profile {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.ls-profile img {
-  max-width: 3rem;
+.ls-profile .ls-profile-img {
+  cursor: pointer;
+  max-width: 3.5rem;
   border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.ls-profile .ls-profile-img:hover {
+  transform: scale(1.1);
 }
 .ls-profile span {
   font-size: 2rem;
   color: var(--light-secondary-color);
+}
+
+.ls-profile .logout {
+  margin-left: auto;
+  transition: all 0.2s ease;
+}
+.ls-profile .logout:hover {
+  transform: scale(1.1);
+}
+
+.ls-profile .logout button {
+  width: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .ls-search {
