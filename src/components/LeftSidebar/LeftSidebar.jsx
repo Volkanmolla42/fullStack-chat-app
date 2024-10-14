@@ -185,7 +185,13 @@ const LeftSidebar = () => {
     <div className="ls">
       <div className="ls-top">
         <div className="ls-nav">
-          <img src={assets.logo} className="logo" alt="navlogo" />
+          <div className="ls-profile">
+            <img
+              src={userData.avatar || assets.avatar_icon}
+              alt="profile image"
+            />
+            <span>ChatApp</span>
+          </div>
           <div className="menu" onClick={toggleMenu}>
             <img src={assets.menu_icon} className="menu-icon" alt="menu icon" />
             {isMenuOpen && (

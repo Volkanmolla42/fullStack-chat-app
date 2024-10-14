@@ -144,9 +144,19 @@ const Chatbox = ({ toggleProfile }) => {
     return () => clearInterval(intervalId);
   }, [chatUser]);
 
+  const focusInput = () => {
+    document.getElementById("chat-input")?.focus();
+  };
+
   return chatUser ? (
     <div className="chat-box">
-      <div className="chat-user" onClick={toggleProfile}>
+      <div
+        className="chat-user"
+        onClick={() => {
+          toggleProfile();
+          focusInput();
+        }}
+      >
         <img
           id="chat-user-pic"
           src={chatUser.userData.avatar || assets.avatar_icon}
@@ -156,10 +166,9 @@ const Chatbox = ({ toggleProfile }) => {
           <span>{chatUser.userData.name}</span>
           {isOnline && <img src={assets.green_dot} className="dot" alt="" />}
         </p>
-        <img src={assets.help_icon} alt="help" />
       </div>
 
-      <div className="chat-msg">
+      <div onClick={focusInput} className="chat-msg">
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -183,6 +192,7 @@ const Chatbox = ({ toggleProfile }) => {
 
       <div className="chat-input-area">
         <input
+          autoComplete="off"
           onChange={(e) => setInput(e.target.value)}
           value={input}
           type="text"
@@ -198,16 +208,18 @@ const Chatbox = ({ toggleProfile }) => {
           id="image"
           accept="image/png, image/jpeg"
           hidden
-        />
-        <label htmlFor="image">
-          <img src={assets.gallery_icon} alt="gallery" />
-        </label>
-        <img onClick={sendMessage} src={assets.send_button} alt="send" />
+        />{" "}
+        <span>
+          <label htmlFor="image">
+            <img src={assets.gallery_icon} alt="gallery" />
+          </label>
+          <img onClick={sendMessage} src={assets.send_button} alt="send" />
+        </span>
       </div>
     </div>
   ) : (
     <div className="chat-welcome">
-      <img src={assets.logo_icon} alt="logo" />
+      <img src="/chat_app.svg" alt="logo" />
       <p>Chat anytime, anywhere</p>
     </div>
   );

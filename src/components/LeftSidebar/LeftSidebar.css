@@ -4,10 +4,11 @@
   flex-direction: column;
   height: 100vh;
   padding: 5px;
+  border-right: 1px solid var(--secondary-color);
 }
 
 .ls-top {
-  padding: 10px 15px;
+  padding: 5px 10px;
 }
 
 .ls-nav {
@@ -17,14 +18,24 @@
   padding: 10px 0;
 }
 
-.ls-nav .logo {
-  max-width: 140px;
-}
-
 .ls-nav .menu img {
   max-height: 20px;
   opacity: 0.6;
   cursor: pointer;
+}
+.ls-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ls-profile img {
+  max-width: 3rem;
+  border-radius: 50%;
+}
+.ls-profile span {
+  font-size: 2rem;
+  color: var(--light-secondary-color);
 }
 
 .ls-search {
@@ -33,7 +44,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 10px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .ls-search img {
@@ -54,6 +65,7 @@
 }
 
 .ls-list {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -66,10 +78,9 @@
   align-items: center;
   gap: 15px;
   padding: 10px 20px;
-  border-bottom: 2px solid var(--light-secondary-color);
+  border-top: 2px solid var(--light-secondary-color);
   cursor: pointer;
   transition: background-color 0.2s ease-out;
-  margin: 2px 0;
   opacity: 0.85;
 }
 
@@ -151,9 +162,10 @@
   color: var(--white-color);
 }
 .friends.border {
-  border: 2px solid var(--light-secondary-color);
+  border: 3px solid var(--light-secondary-color);
   opacity: 1;
 }
+
 .friends.border div span {
   font-weight: 500;
   color: white;

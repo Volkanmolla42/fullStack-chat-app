@@ -18,6 +18,22 @@ const ProfileUpdate = () => {
   const { setUserData } = useContext(AppContext);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setUid(user.uid);
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.data().name) setName(docSnap.data().name);
+        if (docSnap.data().bio) setBio(docSnap.data().bio);
+        if (docSnap.data().avatar) setPrevImage(docSnap.data().avatar);
+      } else {
+        navigate("/", { replace: true });
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const profileUpdate = async (e) => {
     e.preventDefault();
     try {
@@ -44,22 +60,6 @@ const ProfileUpdate = () => {
       toast.error("An error occurred. Please try again.");
     }
   };
-
-  useEffect(() => {
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        setUid(user.uid);
-        const docRef = doc(db, "users", user.uid);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.data().name) setName(docSnap.data().name);
-        if (docSnap.data().bio) setBio(docSnap.data().bio);
-        if (docSnap.data().avatar) setPrevImage(docSnap.data().avatar);
-      } else {
-        navigate("/", { replace: true });
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="profile">

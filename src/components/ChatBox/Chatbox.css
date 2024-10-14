@@ -4,7 +4,7 @@
   flex-direction: column;
   height: 100vh;
   position: relative;
-  background-color: var(--white-color);
+  background: url(/wptheme.jpg);
 }
 
 .chat-box img,
@@ -23,6 +23,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  background-color: var(--light-dark-color);
   border-bottom: 1px solid var(--dark-color);
   cursor: pointer;
 }
@@ -31,14 +32,14 @@ button {
   display: flex;
   align-items: center;
   flex: 1;
-  color: var(--dark-color);
+  color: var(--white-color);
   font-weight: 500;
   font-size: 1.2rem;
 }
 
 #chat-user-pic {
   width: 3rem;
-  border: 0.2rem solid var(--secondary-color);
+  border: 3px solid var(--secondary-color);
   aspect-ratio: 1/1;
   object-fit: cover;
 }
@@ -59,8 +60,8 @@ button {
   align-items: center;
   gap: 12px;
   padding: 10px 15px;
-  background: var(--white-color);
-  border-top: 1px solid var(--dark-color);
+  background: var(--light-dark-color);
+  border-top: 2px solid var(--secondary-color);
 }
 
 .chat-input-area img {
@@ -76,7 +77,8 @@ button {
   flex: 1;
   border: none;
   outline: none;
-  background-color: var(--white-color);
+  background-color: transparent;
+  color: var(--white-color);
 }
 
 .chat-input {
@@ -84,8 +86,12 @@ button {
 }
 
 .chat-input::placeholder {
-  color: var(--dark-color);
+  color: var(--light-gray-color);
   font-style: italic;
+}
+.chat-input-area span img {
+  width: 1.7rem;
+  margin: 0 10px;
 }
 
 .chat-msg {
@@ -98,9 +104,8 @@ button {
   display: flex;
   height: auto;
   gap: 8px;
-  color: white;
+  color: var(--white-color);
   background-color: var(--dark-color);
-
   max-width: 100%;
   border-radius: 10px 0px 10px 10px;
   padding: 8px;
@@ -131,8 +136,8 @@ button {
 
 .msg span {
   align-self: flex-end;
-  font-size: 1.5vh;
-  color: var(--white-color);
+  font-size: 0.8rem;
+  color: var(--light-gray-color);
   transform: translateY(6px);
   word-break: normal;
 }
@@ -143,7 +148,7 @@ button {
 
 .s-msg div,
 .r-msg div {
-  font-size: 0.8rem;
+  font-size: 1rem;
   max-width: 70%;
 }
 .s-msg .msg-img-container span {
