@@ -1,5 +1,5 @@
 .ls {
-  background: var(--dark-color);
+  background: var(--first-color);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -20,7 +20,7 @@
 
 .ls-profile .ls-profile-img {
   cursor: pointer;
-  max-width: 3.5rem;
+  max-width: 3rem;
   border-radius: 50%;
   transition: all 0.2s ease;
 }
@@ -71,6 +71,10 @@
 
 .ls-search input::placeholder {
   color: var(--white-color);
+}
+
+.logout svg {
+  fill: var(--secondary-color);
 }
 
 .ls-list {
@@ -139,7 +143,7 @@
   font-style: italic;
 }
 
-.friends .msg-div div .img-msg-div {
+.friends .img-msg-div {
   align-items: center;
   justify-content: left;
   display: flex;
@@ -148,7 +152,8 @@
   gap: 10px;
 }
 
-.friends .msg-div div img {
+.friends .msg-div div svg {
+  fill: var(--light-gray-color);
   height: 80%;
 }
 
@@ -177,13 +182,13 @@
 
 .friends.border div span {
   font-weight: 500;
-  color: white;
+  color: var(--white-color);
 }
 
 .friends-active {
   background: linear-gradient(
     to bottom right,
-    var(--dark-color),
+    var(--first-color),
     var(--secondary-color)
   );
   opacity: 1;

@@ -19,6 +19,7 @@ const Chatbox = ({ toggleProfile }) => {
     useContext(AppContext);
   const [isOnline, setIsOnline] = useState(false);
   const [input, setInput] = useState("");
+  const theme = localStorage.getItem("theme");
 
   useEffect(() => {
     if (messagesId) {
@@ -149,7 +150,14 @@ const Chatbox = ({ toggleProfile }) => {
   };
 
   return chatUser ? (
-    <div className="chat-box">
+    <div
+      style={{
+        backgroundImage: `${
+          theme === "helloKitty" ? "url(/hellokity3.png)" : "url(/wptheme.jpg)"
+        }`,
+      }}
+      className="chat-box"
+    >
       <div
         className="chat-user"
         onClick={() => {

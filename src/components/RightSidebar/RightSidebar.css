@@ -1,6 +1,6 @@
 .rs {
   color: var(--white-color);
-  background: var(--dark-color);
+  background: var(--first-color);
   height: 100vh;
   overflow-y: auto;
   display: grid;
@@ -69,7 +69,7 @@
 .rs-media p {
   position: sticky;
   top: 0;
-  background-color: var(--dark-color);
+  background-color: var(--first-color);
   padding-bottom: 10px;
   width: 100%;
 }
@@ -91,7 +91,7 @@
 }
 
 .rs .logout-btn {
-  background: var(--dark-color);
+  background: var(--first-color);
   color: var(--white-color);
   border: 1px solid var(--secondary-color);
   border-radius: 20px;

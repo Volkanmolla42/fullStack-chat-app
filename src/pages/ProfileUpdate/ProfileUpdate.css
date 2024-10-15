@@ -5,25 +5,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--white-color);
 }
 
 .profile-container {
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: var(--first-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   min-width: 50%;
   border-radius: 10px;
 }
+.profile-container .right-side {
+  align-self: center;
+  justify-self: center;
+}
+
+.profile-container .right-side div {
+  display: flex;
+  justify-content: space-between;
+}
 .profile form img {
   object-fit: cover;
-
   border-radius: 50%;
   width: 4rem;
   aspect-ratio: 1/1;
 }
 .profile-pic-big {
   width: 15rem;
+  display: block;
   border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1/1;
@@ -35,7 +44,6 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 3rem;
-  width: 50%;
 }
 .profile from h3 {
   font-weight: 500;
@@ -45,7 +53,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  color: gray;
+  color: var(--white-color);
   cursor: pointer;
 }
 
@@ -55,7 +63,7 @@ textarea {
   border: 1px solid var(--white-color);
 }
 
-.profile form button {
+.profile button {
   background: var(--secondary-color);
   padding: 0.6rem;
   color: var(--white-color);

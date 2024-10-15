@@ -38,13 +38,3 @@ img.dot {
   width: 1.3rem;
   margin: auto;
 }
-
-:root {
-  --dark-color: #191a1f;
-  --light-dark-color: #24252c;
-  --secondary-color: #772233;
-  --light-secondary-color: #be3b5a;
-  --white-color: #eeeeee;
-  --black-color: #000000;
-  --light-gray-color: #a1a1a8;
-}
