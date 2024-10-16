@@ -39,7 +39,7 @@ const App = () => {
       "--secondary-color": "#ED0D92",
       "--light-secondary-color": "#0E000A",
       "--white-color": "#0E000A",
-      "--black-color": "#F2F1F2",
+      "--black-color": "#dddddd",
       "--light-gray-color": "#F5A3C8",
     },
   };

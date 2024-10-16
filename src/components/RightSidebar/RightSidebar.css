@@ -9,9 +9,9 @@
   padding: 10px;
   position: absolute;
   top: 0;
-  right: -20%;
   width: 20%;
-  transition: right 0.2s ease;
+  right: -20%;
+  transition: right 0.3s ease;
 }
 
 .rs.open {
@@ -35,7 +35,7 @@
   height: 2rem;
   cursor: pointer;
   background-color: inherit;
-  transition: background-color 0.1s ease;
+  transition: background-color 0.2s ease;
   padding: 5px;
 }
 
@@ -98,10 +98,21 @@
   font-size: 1rem;
   font-weight: 300;
   cursor: pointer;
-  transition: background-color 0.1s ease;
+  transition: background-color 0.2s ease;
   margin: 5px 10px;
 }
 
 .rs button:hover {
   background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .rs {
+    width: 80%;
+    top: 0;
+    right: -100%;
+  }
+  .rs.open {
+    right: 0;
+  }
 }

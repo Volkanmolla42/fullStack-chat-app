@@ -29,7 +29,7 @@ const RightSidebar = ({ profileState, toggleProfile }) => {
       <div className={`rs ${profileState ? "open" : ""}`}>
         <div className="rs-profile">
           <button onClick={toggleProfile} className="close-profile-x">
-            <img src="/xmark-solid.svg" alt="close profile button" />
+            <img src={assets.close_icon} alt="close profile button" />
           </button>
           <img
             src={chatUser.userData.avatar || assets.avatar_icon}

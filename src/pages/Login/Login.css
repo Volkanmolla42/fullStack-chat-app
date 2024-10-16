@@ -4,20 +4,9 @@
   background-size: cover;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   position: relative;
   overflow: hidden;
   color: var(--white-color);
-}
-
-.login-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--white-color);
-  font-size: 4rem;
-  text-shadow: -5px 5px 2px rgba(0, 0, 0, 1);
-  z-index: 2;
 }
 .login::before {
   content: "";
@@ -27,15 +16,34 @@
   right: -20px;
   bottom: -20px;
   background: inherit;
-  filter: blur(5px);
+  filter: blur(8px);
   z-index: 1;
+}
+
+.login-logo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white-color);
+  font-size: 4rem;
+  text-shadow: -5px 5px 2px rgba(0, 0, 0, 1);
+  z-index: 2;
 }
 
 .login .logo {
   width: max(20vw, 200px);
 }
 
+.login-form-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-form {
+  width: 50%;
   background: var(--first-color);
   padding: 1.5rem 2rem;
   display: flex;
@@ -43,7 +51,6 @@
   flex-direction: column;
   border-radius: 0.6rem;
   z-index: 2;
-  width: 30%;
   border: 3px solid var(--light-secondary-color);
 }
 
@@ -91,23 +98,33 @@
   gap: 5px;
 }
 
-.login-forgot .login-click-here {
+.login-forgot .login-sub-text {
+  font-weight: 600;
   color: var(--white-color);
   cursor: pointer;
   font-style: italic;
-}
-.login-forgot .login-sub-text {
-  font-weight: 600;
-
   font-size: 0.8rem;
-  color: var(--light-secondary-color);
 }
 
-.login-forgot .login-click-here:hover {
+.login-forgot .login-sub-text:hover {
   text-decoration: underline;
 }
 
 .login-form button:hover {
   background-color: var(--light-secondary-color);
   color: var(--first-color);
+}
+
+@media (max-width: 768px) {
+  .login {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+  .login-form-container {
+    width: 100%;
+  }
+  .login-form {
+    width: 90%;
+  }
 }

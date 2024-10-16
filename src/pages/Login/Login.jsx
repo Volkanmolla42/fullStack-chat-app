@@ -23,81 +23,79 @@ const Login = () => {
         <img src="/chat_app.svg" alt="" className="logo" />
         <div>ChatApp</div>
       </div>
-      <form className="login-form" onSubmit={handleOnSubmit}>
-        <h2>{isNewUser ? "Sign Up" : "Log In"} </h2>
-        {isNewUser ? (
+      <div className="login-form-container">
+        <form className="login-form" onSubmit={handleOnSubmit}>
+          <h2>{isNewUser ? "Sign Up" : "Log In"} </h2>
+          {isNewUser ? (
+            <input
+              autoComplete="off"
+              type="text"
+              placeholder="Username"
+              required
+              className="form-input"
+              onChange={(e) => setUserName(e.target.value)}
+              value={userName}
+            />
+          ) : null}
+
           <input
             autoComplete="off"
-            type="text"
-            placeholder="Username"
+            type="email"
+            placeholder="Email adress"
             required
             className="form-input"
-            onChange={(e) => setUserName(e.target.value)}
-            value={userName}
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
-        ) : null}
+          <input
+            autoComplete="off"
+            type="password"
+            placeholder="Password"
+            required
+            className="form-input"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          <button type="submit">
+            {isNewUser ? "Create an account" : "Login Now"}
+          </button>
+          {isNewUser ? (
+            <div className="login-term">
+              <input type="checkbox" id="term" required />
+              <label htmlFor="term">
+                Agree to the terms of use & privacy policy
+              </label>
+            </div>
+          ) : null}
 
-        <input
-          autoComplete="off"
-          type="email"
-          placeholder="Email adress"
-          required
-          className="form-input"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <input
-          autoComplete="off"
-          type="password"
-          placeholder="Password"
-          required
-          className="form-input"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-        <button type="submit">
-          {isNewUser ? "Create an account" : "Login Now"}
-        </button>
-        {isNewUser ? (
-          <div className="login-term">
-            <input type="checkbox" id="term" required />
-            <label htmlFor="term">
-              Agree to the terms of use & privacy policy
-            </label>
-          </div>
-        ) : null}
-
-        <div className="login-forgot">
-          <div>
-            <span className="login-sub-text">
-              {isNewUser
-                ? "Already have an account? "
-                : "Don't have an account? "}
-            </span>
-            <span
-              className="login-click-here"
-              onClick={() => {
-                toggleIsNewUser(!isNewUser);
-              }}
-            >
-              click here!
-            </span>
-          </div>
-          {!isNewUser && (
+          <div className="login-forgot">
             <div>
-              <span className="login-sub-text">Forgot password? </span>
               <span
-                className="login-click-here"
                 onClick={() => {
                   toggleIsNewUser(!isNewUser);
                 }}
+                className="login-sub-text"
               >
-                click here!
+                {isNewUser
+                  ? "Already have an account? "
+                  : "Don't have an account? "}
               </span>
             </div>
-          )}
-        </div>
-      </form>
+            {!isNewUser && (
+              <div>
+                <span
+                  onClick={() => {
+                    resetPass(email);
+                  }}
+                  className="login-sub-text"
+                >
+                  Forgot password?{" "}
+                </span>
+              </div>
+            )}
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

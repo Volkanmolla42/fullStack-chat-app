@@ -8,8 +8,10 @@ import menu_icon from "./menu_icon.png";
 import arrow_icon from "./arrow_icon.png";
 import green_dot from "./green_dot.png";
 import logout_icon from "./logout-icon.svg";
+import close_icon from "./xmark-solid.svg";
 
 const assets = {
+  close_icon,
   avatar_icon,
   gallery_icon,
   logout_icon,

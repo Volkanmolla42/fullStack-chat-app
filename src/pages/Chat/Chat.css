@@ -13,7 +13,7 @@
   grid-template-columns: 25fr 75fr 0fr;
   position: relative;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .chat-container.profile-open {
@@ -23,4 +23,16 @@
 .loading {
   font-size: 50px;
   color: var(--white-color);
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    grid-template-columns: 1fr;
+  }
+  .chat-container.profile-open {
+    grid-template-columns: 1fr;
+  }
+  .loading {
+    font-size: 30px;
+  }
 }

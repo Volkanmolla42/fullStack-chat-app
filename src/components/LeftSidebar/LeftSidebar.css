@@ -3,11 +3,62 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 5px;
-  border-right: 1px solid var(--secondary-color);
+  min-width: 300px;
+  position: relative;
 }
 
+.close-friends {
+  transform: translate(0, -10px);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease;
+  display: none;
+}
+
+.close-friends .bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--secondary-color);
+  margin: 3px 0;
+  transition: all 0.2s ease;
+}
+
+.close-friends .bar1 {
+  transform: translate(0, 7px) rotate(45deg);
+}
+.close-friends .bar2 {
+  opacity: 0; /* Orta çubuğu gizle */
+}
+.close-friends .bar3 {
+  transform: translate(0, -7px) rotate(-45deg);
+}
+
+.on-close-icon {
+  transform: translate(60px, -10px);
+}
+.on-close-icon .bar1 {
+  width: 60%;
+  transform: translate(12px, 2px) rotate(35deg);
+}
+.on-close-icon .bar2 {
+  opacity: 1;
+  transform: translate();
+}
+.on-close-icon .bar3 {
+  width: 60%;
+
+  transform: translate(12px, -2px) rotate(-35deg);
+}
 .ls-top {
+  padding: 5px;
+
   cursor: default;
   padding: 20px 15px;
 }
@@ -15,6 +66,7 @@
 .ls-profile {
   display: flex;
   align-items: center;
+  justify-content: start;
   gap: 20px;
 }
 
@@ -32,19 +84,40 @@
   color: var(--light-secondary-color);
 }
 
-.ls-profile .logout {
-  margin-left: auto;
-  transition: all 0.2s ease;
+.ls-bottom {
+  color: var(--white-color);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  border-top: 2px solid var(--secondary-color);
+  padding: 10.5px 10px;
+  width: 100%;
 }
-.ls-profile .logout:hover {
-  transform: scale(1.1);
+.ls-bottom .logout {
+  background-color: transparent;
 }
 
-.ls-profile .logout button {
-  width: 30px;
-  background-color: transparent;
-  border: none;
+.ls-bottom .logout button {
+  background-color: inherit;
+  border: 2px solid var(--secondary-color);
+  padding: 5px 10px;
+  color: var(--white-color);
+  border-radius: 10px;
+  width: 100%;
   cursor: pointer;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+.ls-bottom .logout svg {
+  height: 1.2rem;
+  width: auto;
+  fill: var(--secondary-color);
+}
+
+.ls-bottom .copy {
+  background-color: transparent;
+  font-size: 8px;
 }
 
 .ls-search {
@@ -71,10 +144,6 @@
 
 .ls-search input::placeholder {
   color: var(--white-color);
-}
-
-.logout svg {
-  fill: var(--secondary-color);
 }
 
 .ls-list {
@@ -205,30 +274,24 @@
   background-color: var(--light-secondary-color);
 }
 
-.ls-nav .menu {
-  position: relative;
-  z-index: 1;
-}
-
-.menu .sub-menu-list {
-  position: absolute;
-  top: 70%;
-  right: 0;
-  width: 130px;
-  padding: 20px;
-  border-radius: 5px;
-  background: var(--white-color);
-  color: var(--black-color);
-}
-
-.menu hr {
-  border: none;
-  height: 1px;
-  background-color: var(--light-secondary-color);
-  margin: 8px 0;
-}
-
-.sub-menu-list p {
-  cursor: pointer;
-  font-size: 1rem;
+@media (max-width: 768px) {
+  .ls {
+    position: absolute;
+    width: 80%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-out;
+    z-index: 1;
+  }
+  .ls.ls-open {
+    transform: translateX(0);
+  }
+  .ls-profile {
+    justify-content: space-between;
+  }
+  .close-friends {
+    display: block;
+  }
 }

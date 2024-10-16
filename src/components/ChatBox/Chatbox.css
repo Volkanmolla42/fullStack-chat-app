@@ -6,6 +6,7 @@
   position: relative;
   background-size: contain;
   background-position: center;
+  border-left: 2px solid var(--secondary-color);
 }
 
 .chat-box img,
@@ -189,4 +190,10 @@ button {
   font-size: 20px;
   font-weight: 500;
   color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .chat-user {
+    padding-left: 60px;
+  }
 }
