@@ -134,4 +134,7 @@ textarea {
     border-radius: 0;
     justify-content: flex-start;
   }
+  .profile .themes {
+    margin-top: auto;
+  }
 }
