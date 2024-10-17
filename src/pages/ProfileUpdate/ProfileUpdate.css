@@ -1,5 +1,5 @@
 .profile {
-  height: 100vh;
+  height: 100svh;
   background: url(/background.png) no-repeat;
   background-size: cover;
   display: flex;
