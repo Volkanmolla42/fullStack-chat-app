@@ -90,13 +90,16 @@ button {
   font-style: italic;
   font-size: 1rem;
 }
+.chat-input-area span {
+  display: flex;
+  gap: 15px;
+}
 .chat-input-area span img {
   width: 1.7rem;
-  margin: 0 10px;
 }
 
 .chat-msg {
-  height: calc(100% - 70px);
+  height: 100%;
   overflow-y: scroll;
   display: flex;
   flex-direction: column-reverse;

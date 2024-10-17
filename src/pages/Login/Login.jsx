@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-logo">
-        <img src="/chat_app.svg" alt="" className="logo" />
+        <img src="/chat_app.svg" alt="" />
         <div>ChatApp</div>
       </div>
       <div className="login-form-container">

@@ -4,6 +4,7 @@
   background-size: cover;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   position: relative;
   overflow: hidden;
   color: var(--white-color);
@@ -25,14 +26,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--white-color);
+  color: var(--secondary-color);
   font-size: 4rem;
-  text-shadow: -5px 5px 2px rgba(0, 0, 0, 1);
+  text-shadow: -5px 5px 2px var(--light-first-color);
   z-index: 2;
 }
 
-.login .logo {
-  width: max(20vw, 200px);
+.login-logo img {
+  max-width: 300px;
 }
 
 .login-form-container {
@@ -43,7 +44,7 @@
 }
 
 .login-form {
-  width: 50%;
+  width: 60%;
   background: var(--first-color);
   padding: 1.5rem 2rem;
   display: flex;
@@ -56,6 +57,7 @@
 
 .login-form h2 {
   font-weight: 500;
+  text-align: center;
 }
 
 .form-input {
@@ -93,9 +95,11 @@
   color: var(--white-color);
 }
 .login-forgot {
+  text-align: center;
   font-size: 0.8rem;
   display: flex;
   gap: 5px;
+  justify-content: space-around;
 }
 
 .login-forgot .login-sub-text {
@@ -118,13 +122,22 @@
 @media (max-width: 768px) {
   .login {
     flex-direction: column;
-    justify-content: center;
-    gap: 30px;
+    gap: 10px;
   }
   .login-form-container {
     width: 100%;
   }
   .login-form {
+    padding: 10px;
     width: 90%;
+  }
+  .login-logo {
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: 2.5rem;
+  }
+  .login-logo img {
+    max-width: 50px;
   }
 }
