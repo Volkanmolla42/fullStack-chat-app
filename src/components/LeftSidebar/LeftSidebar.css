@@ -2,11 +2,16 @@
   background: var(--first-color);
   display: flex;
   flex-direction: column;
-  height: 100vh;
   min-width: 300px;
+  height: 100%;
+  max-height: 100svh;
   position: relative;
 }
 
+.ls-top {
+  padding: 20px 15px;
+  cursor: default;
+}
 .close-friends {
   margin-left: auto;
   background: transparent;
@@ -55,11 +60,6 @@
   transform: translate(12px, -2px) rotate(-35deg);
 }
 
-.ls-top {
-  padding: 20px 15px;
-  cursor: default;
-}
-
 .ls-profile {
   display: flex;
   align-items: center;
@@ -80,33 +80,6 @@
 .ls-profile span {
   font-size: 2rem;
   color: var(--light-secondary-color);
-}
-
-.ls-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 2px solid var(--secondary-color);
-  padding: 10.5px 10px;
-  width: 100%;
-  color: var(--white-color);
-}
-
-.ls-bottom .logout {
-  background-color: transparent;
-}
-
-.ls-bottom .logout button {
-  background-color: inherit;
-  border: 2px solid var(--secondary-color);
-  padding: 5px 10px;
-  color: var(--white-color);
-  border-radius: 10px;
-  width: 100%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .ls-bottom .logout svg {
@@ -269,6 +242,32 @@
 .friends-active:hover {
   background-color: var(--light-secondary-color);
   opacity: 1;
+}
+.ls-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid var(--secondary-color);
+  padding: 10.5px 10px;
+  width: 100%;
+  color: var(--white-color);
+}
+
+.ls-bottom .logout {
+  background-color: transparent;
+}
+
+.ls-bottom .logout button {
+  background-color: inherit;
+  border: 2px solid var(--secondary-color);
+  padding: 5px 10px;
+  color: var(--white-color);
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 @media (max-width: 768px) {
