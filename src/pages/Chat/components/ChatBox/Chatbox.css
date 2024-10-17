@@ -198,5 +198,8 @@ button {
 @media (max-width: 768px) {
   .chat-user {
     padding-left: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
   }
 }
