@@ -195,6 +195,7 @@ const Chatbox = ({ toggleProfile }) => {
       <div className="chat-input-area">
         <input
           autoComplete="off"
+          inputMode="text"
           onChange={(e) => setInput(e.target.value)}
           value={input}
           type="text"
