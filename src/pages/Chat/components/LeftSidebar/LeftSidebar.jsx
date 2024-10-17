@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import assets from "../../assets/assets";
+import assets from "../../../../assets/assets";
 import "./LeftSidebar.css";
 import {
   arrayUnion,
@@ -13,9 +13,9 @@ import {
   updateDoc,
   where,
 } from "firebase/firestore";
-import { db, logout } from "../../config/firebase";
+import { db, logout } from "../../../../config/firebase";
 import { useContext, useRef, useState } from "react";
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from "../../../../context/AppContext";
 import { toast } from "react-toastify";
 
 // eslint-disable-next-line react/prop-types

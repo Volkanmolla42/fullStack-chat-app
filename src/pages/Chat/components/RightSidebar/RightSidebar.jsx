@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import assets from "../../assets/assets";
-import { logout } from "../../config/firebase";
+import assets from "../../../../assets/assets";
+import { logout } from "../../../../config/firebase";
 import "./RightSidebar.css";
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from "../../../../context/AppContext";
 
 // eslint-disable-next-line react/prop-types
 const RightSidebar = ({ profileState, toggleProfile }) => {

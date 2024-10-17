@@ -1,11 +1,11 @@
 .profile {
-  height: 100%;
-  background: url(/background.png) no-repeat;
-  background-size: cover;
   display: flex;
+  height: 100%;
   align-items: center;
   justify-content: center;
   color: var(--white-color);
+  background: url(/background.png) no-repeat;
+  background-size: cover;
 }
 
 .profile-container {
@@ -38,20 +38,20 @@
 }
 
 .profile-container button {
+  width: 100%;
   background: var(--secondary-color);
   padding: 0.6rem;
-  width: 200px;
   color: var(--white-color);
   border: none;
   font-size: 16px;
   cursor: pointer;
-  margin: 15px 10px;
+  margin: 0.5rem;
 }
 .profile-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
 }
 .profile-pic-big {
   width: 12rem;
@@ -115,20 +115,23 @@ textarea {
 }
 
 .profile .themes {
+  width: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media (max-width: 768px) {
-  .profile-container {
-    height: 100%;
-    border-radius: 0;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 20px;
+  .profile {
+    padding: 0;
+    margin: 0;
+    height: 100svh;
   }
-  .profile .themes {
-    margin: auto 0 30px 0;
-    flex-direction: column;
+  .profile-container {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    justify-content: flex-start;
   }
 }

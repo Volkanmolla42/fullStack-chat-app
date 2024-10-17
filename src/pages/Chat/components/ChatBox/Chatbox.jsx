@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import assets from "../../assets/assets";
+import assets from "../../../../assets/assets";
 import "./Chatbox.css";
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from "../../../../context/AppContext";
 import {
   arrayUnion,
   doc,
@@ -9,10 +9,9 @@ import {
   onSnapshot,
   updateDoc,
 } from "firebase/firestore";
-import { db } from "../../config/firebase";
+import { db } from "../../../../config/firebase";
 import { toast } from "react-toastify";
-import upload from "../../lib/upload";
-
+import upload from "../../../../lib/upload";
 // eslint-disable-next-line react/prop-types
 const Chatbox = ({ toggleProfile }) => {
   const { userData, messagesId, chatUser, messages, setMessages } =
