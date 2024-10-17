@@ -1,7 +1,7 @@
 .rs {
   color: var(--white-color);
   background: var(--first-color);
-  height: 100svh;
+  height: 100%;
   overflow-y: auto;
   display: grid;
   grid-template-rows: max-content 1fr 45px;

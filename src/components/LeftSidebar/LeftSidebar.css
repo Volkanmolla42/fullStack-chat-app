@@ -8,18 +8,18 @@
 }
 
 .close-friends {
-  transform: translate(0, -10px);
+  margin-left: auto;
   background: transparent;
   border: none;
   cursor: pointer;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 30px;
-  height: 30px;
+  height: 50px;
   transition: all 0.3s ease;
-  display: none;
+  transform: translate(0, -10px);
 }
 
 .close-friends .bar {
@@ -34,7 +34,7 @@
   transform: translate(0, 7px) rotate(45deg);
 }
 .close-friends .bar2 {
-  opacity: 0; /* Orta çubuğu gizle */
+  opacity: 0;
 }
 .close-friends .bar3 {
   transform: translate(0, -7px) rotate(-45deg);
@@ -49,24 +49,20 @@
 }
 .on-close-icon .bar2 {
   opacity: 1;
-  transform: translate();
 }
 .on-close-icon .bar3 {
   width: 60%;
-
   transform: translate(12px, -2px) rotate(-35deg);
 }
-.ls-top {
-  padding: 5px;
 
-  cursor: default;
+.ls-top {
   padding: 20px 15px;
+  cursor: default;
 }
 
 .ls-profile {
   display: flex;
   align-items: center;
-  justify-content: start;
   gap: 20px;
 }
 
@@ -74,25 +70,28 @@
   cursor: pointer;
   max-width: 3rem;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
+
 .ls-profile .ls-profile-img:hover {
   transform: scale(1.1);
 }
+
 .ls-profile span {
   font-size: 2rem;
   color: var(--light-secondary-color);
 }
 
 .ls-bottom {
-  color: var(--white-color);
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  display: flex;
   border-top: 2px solid var(--secondary-color);
   padding: 10.5px 10px;
   width: 100%;
+  color: var(--white-color);
 }
+
 .ls-bottom .logout {
   background-color: transparent;
 }
@@ -105,13 +104,13 @@
   border-radius: 10px;
   width: 100%;
   cursor: pointer;
-  align-items: center;
   display: flex;
+  align-items: center;
   gap: 10px;
 }
+
 .ls-bottom .logout svg {
   height: 1.2rem;
-  width: auto;
   fill: var(--secondary-color);
 }
 
@@ -167,11 +166,11 @@
 }
 
 .friends .friends-pic {
-  object-fit: cover;
   width: 3rem;
   height: 3rem;
   aspect-ratio: 1;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .friends div {
@@ -186,7 +185,6 @@
 }
 
 .friends .msg-div div {
-  width: auto;
   max-width: 150px;
   height: 30px;
   font-size: 0.8rem;
@@ -222,8 +220,8 @@
 }
 
 .friends .msg-div div svg {
-  fill: var(--light-gray-color);
   height: 80%;
+  fill: var(--light-gray-color);
 }
 
 .add-user img {
@@ -244,13 +242,13 @@
 .friends:hover span {
   color: var(--white-color);
 }
+
 .friends.border {
   border: 3px solid var(--light-secondary-color);
   opacity: 1;
 }
 
 .friends.border div span {
-  font-weight: 500;
   color: var(--white-color);
 }
 
@@ -263,15 +261,14 @@
   opacity: 1;
 }
 
-.friends-active .msg-div div span {
-  color: var(--white-color);
-}
+.friends-active .msg-div div span,
 .friends-active .msg-div p {
   color: var(--white-color);
 }
+
 .friends-active:hover {
-  opacity: 1;
   background-color: var(--light-secondary-color);
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -285,12 +282,11 @@
     transition: transform 0.3s ease-out;
     z-index: 1;
   }
+
   .ls.ls-open {
     transform: translateX(0);
   }
-  .ls-profile {
-    justify-content: space-between;
-  }
+
   .close-friends {
     display: block;
   }
