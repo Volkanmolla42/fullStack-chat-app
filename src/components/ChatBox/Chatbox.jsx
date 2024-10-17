@@ -145,10 +145,6 @@ const Chatbox = ({ toggleProfile }) => {
     return () => clearInterval(intervalId);
   }, [chatUser]);
 
-  const focusInput = () => {
-    document.getElementById("chat-input")?.focus();
-  };
-
   return chatUser ? (
     <div
       style={{
@@ -162,7 +158,6 @@ const Chatbox = ({ toggleProfile }) => {
         className="chat-user"
         onClick={() => {
           toggleProfile();
-          focusInput();
         }}
       >
         <img
@@ -176,7 +171,7 @@ const Chatbox = ({ toggleProfile }) => {
         </p>
       </div>
 
-      <div onClick={focusInput} className="chat-msg">
+      <div className="chat-msg">
         {messages.map((msg, index) => (
           <div
             key={index}
