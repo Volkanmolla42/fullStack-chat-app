@@ -38,10 +38,7 @@ main {
   height: 100svh;
   width: 100%;
 }
-#root {
-  height: 100%;
-  width: 100%;
-}
+
 img.dot {
   width: 1.3rem;
   margin: auto;

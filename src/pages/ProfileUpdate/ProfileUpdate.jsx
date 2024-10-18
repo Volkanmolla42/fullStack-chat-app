@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import upload from "../../lib/upload";
 import { AppContext } from "../../context/AppContext";
-// eslint-disable-next-line react/prop-types
-const ProfileUpdate = ({ setTheme }) => {
+const ProfileUpdate = () => {
   const [image, setImage] = useState(false);
   const [name, setName] = useState("");
   const [bio, setBio] = useState("");
@@ -18,7 +17,7 @@ const ProfileUpdate = ({ setTheme }) => {
   const [prevImage, setPrevImage] = useState("");
   const [isFormEdit, setIsFormEdit] = useState(false);
   const [count, setCount] = useState(0);
-  const { setUserData } = useContext(AppContext);
+  const { setUserData, setChatTheme } = useContext(AppContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -65,17 +64,13 @@ const ProfileUpdate = ({ setTheme }) => {
     }
   };
 
-  const SwitchThemeTo = (theme) => {
-    setTheme(theme);
-  };
-
   const specialTheme = () => {
     setCount((c) => c + 1);
     if (count > 5) setCount(0);
 
     console.log(count);
     if (count === 4) {
-      SwitchThemeTo("helloKitty");
+      setChatTheme("helloKitty");
     }
   };
 
@@ -178,10 +173,10 @@ const ProfileUpdate = ({ setTheme }) => {
         </div>
 
         <div className="themes">
-          <button onClick={() => SwitchThemeTo("light")} type="button">
+          <button onClick={() => setChatTheme("light")} type="button">
             Light Mode
           </button>
-          <button onClick={() => SwitchThemeTo("dark")} type="button">
+          <button onClick={() => setChatTheme("dark")} type="button">
             Dark mode
           </button>
         </div>
