@@ -1,7 +1,8 @@
 import { doc, getDoc, onSnapshot, updateDoc } from "firebase/firestore";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { auth, db } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export const AppContext = createContext();
 
@@ -13,6 +14,9 @@ const AppContextProvider = (props) => {
 
   const [messages, setMessages] = useState([]);
   const [chatUser, setChatUser] = useState(null);
+  const [chatTheme, setChatTheme] = useState(
+    localStorage.getItem("theme") || "dark"
+  );
 
   const loadUserData = async (uid) => {
     try {
@@ -42,7 +46,7 @@ const AppContextProvider = (props) => {
       }
     };
 
-    const intervalId = setInterval(updateLastSeen, 5000);
+    const intervalId = setInterval(updateLastSeen, 10000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -72,6 +76,50 @@ const AppContextProvider = (props) => {
     }
   }, [userData]);
 
+  const themeStyles = useMemo(
+    () => ({
+      light: {
+        "--first-color": "#eeeeee",
+        "--light-first-color": "#eeeeee",
+        "--secondary-color": "#a1a1a8",
+        "--light-secondary-color": "#772233",
+        "--white-color": "#000000",
+        "--black-color": "#24252c",
+        "--light-gray-color": "#191a1f",
+      },
+      dark: {
+        "--first-color": "#191a1f",
+        "--light-first-color": "#24252c",
+        "--secondary-color": "#772233",
+        "--light-secondary-color": "#be3b5a",
+        "--white-color": "#eeeeee",
+        "--black-color": "#000000",
+        "--light-gray-color": "#a1a1a8",
+      },
+      helloKitty: {
+        "--first-color": "#F2F1F2",
+        "--light-first-color": "#F5A3C8",
+        "--secondary-color": "#ED0D92",
+        "--light-secondary-color": "#0E000A",
+        "--white-color": "#0E000A",
+        "--black-color": "#dddddd",
+        "--light-gray-color": "#F5A3C8",
+      },
+    }),
+    []
+  );
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const styles = themeStyles[chatTheme];
+
+    Object.entries(styles).forEach(([key, value]) => {
+      root.style.setProperty(key, value);
+    });
+
+    localStorage.setItem("theme", chatTheme);
+  }, [chatTheme, themeStyles]);
+
   const value = {
     userData,
     setUserData,
@@ -84,12 +132,15 @@ const AppContextProvider = (props) => {
     setMessagesId,
     chatUser,
     setChatUser,
+    chatTheme,
+    setChatTheme,
   };
 
   return (
-    // eslint-disable-next-line react/prop-types
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
   );
 };
-
+AppContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 export default AppContextProvider;

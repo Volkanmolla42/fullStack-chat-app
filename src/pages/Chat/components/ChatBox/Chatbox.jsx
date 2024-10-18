@@ -14,11 +14,10 @@ import { toast } from "react-toastify";
 import upload from "../../../../lib/upload";
 // eslint-disable-next-line react/prop-types
 const Chatbox = ({ toggleProfile }) => {
-  const { userData, messagesId, chatUser, messages, setMessages } =
+  const { userData, messagesId, chatUser, messages, setMessages, chatTheme } =
     useContext(AppContext);
   const [isOnline, setIsOnline] = useState(false);
   const [input, setInput] = useState("");
-  const theme = localStorage.getItem("theme");
 
   useEffect(() => {
     if (messagesId) {
@@ -135,12 +134,12 @@ const Chatbox = ({ toggleProfile }) => {
       if (userSnap.exists()) {
         const { lastSeen } = userSnap.data();
         const lastSeenDifference = Date.now() - lastSeen;
-        setIsOnline(lastSeenDifference <= 6000);
+        setIsOnline(lastSeenDifference <= 11000);
       }
     };
 
     updateLastSeen();
-    const intervalId = setInterval(updateLastSeen, 5000);
+    const intervalId = setInterval(updateLastSeen, 10000);
     return () => clearInterval(intervalId);
   }, [chatUser]);
 
@@ -148,7 +147,9 @@ const Chatbox = ({ toggleProfile }) => {
     <div
       style={{
         backgroundImage: `${
-          theme === "helloKitty" ? "url(/hellokity3.png)" : "url(/wptheme.jpg)"
+          chatTheme === "helloKitty"
+            ? "url(/hellokity3.png)"
+            : "url(/wptheme.jpg)"
         }`,
       }}
       className="chat-box"
