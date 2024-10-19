@@ -34,11 +34,10 @@ html {
   scroll-behavior: smooth;
 }
 
-main {
+#root {
+  width: 100vw;
   height: 100svh;
-  width: 100%;
 }
-
 img.dot {
   width: 1.3rem;
   margin: auto;

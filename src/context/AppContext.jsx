@@ -11,13 +11,13 @@ const AppContextProvider = (props) => {
   const [userData, setUserData] = useState({});
   const [chatData, setChatData] = useState([]);
   const [messagesId, setMessagesId] = useState(null);
-
   const [messages, setMessages] = useState([]);
   const [chatUser, setChatUser] = useState(null);
-  const [chatTheme, setChatTheme] = useState(
-    localStorage.getItem("theme") || "dark"
+  const [isProfileOpen, setisProfileOpen] = useState(false);
+  const [isFriendsOpen, setisFriendsOpen] = useState(true);
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "dark"
   );
-
   const loadUserData = async (uid) => {
     try {
       const userRef = doc(db, "users", uid);
@@ -25,8 +25,8 @@ const AppContextProvider = (props) => {
       const userData = userSnap.data();
       if (userData) {
         setUserData(userData);
-        if (!userData.avatar && !userData.name) {
-          navigate("/profile");
+        if (!userData.name) {
+          navigate("/profile", { replace: true });
         }
       } else {
         console.error("User data is undefined");
@@ -52,7 +52,7 @@ const AppContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    if (userData.id) {
+    if (userData?.id) {
       const chatRef = doc(db, "chats", userData.id);
       const unSub = onSnapshot(chatRef, async (res) => {
         const chatItems = res.data()?.chatsData;
@@ -70,10 +70,13 @@ const AppContextProvider = (props) => {
           setChatData([]);
         }
       });
+
       return () => {
         unSub();
       };
     }
+
+    setChatData([]);
   }, [userData]);
 
   const themeStyles = useMemo(
@@ -110,16 +113,23 @@ const AppContextProvider = (props) => {
   );
 
   useEffect(() => {
-    const root = document.documentElement;
-    const styles = themeStyles[chatTheme];
+    const applyTheme = (theme) => {
+      const root = document.documentElement;
+      const styles = themeStyles[theme];
 
-    Object.entries(styles).forEach(([key, value]) => {
-      root.style.setProperty(key, value);
-    });
+      Object.entries(styles).forEach(([key, value]) => {
+        root.style.setProperty(key, value);
+      });
 
-    localStorage.setItem("theme", chatTheme);
-  }, [chatTheme, themeStyles]);
+      localStorage.setItem("theme", theme);
+    };
+    applyTheme(theme);
+  }, [theme, themeStyles]);
 
+  const toggleProfile = () => {
+    setisProfileOpen(!isProfileOpen);
+    setisFriendsOpen(false);
+  };
   const value = {
     userData,
     setUserData,
@@ -132,15 +142,22 @@ const AppContextProvider = (props) => {
     setMessagesId,
     chatUser,
     setChatUser,
-    chatTheme,
-    setChatTheme,
+    theme,
+    setTheme,
+    isProfileOpen,
+    setisProfileOpen,
+    toggleProfile,
+    isFriendsOpen,
+    setisFriendsOpen,
   };
 
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
   );
 };
+
 AppContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
 export default AppContextProvider;

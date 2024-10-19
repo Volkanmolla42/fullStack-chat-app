@@ -27,7 +27,9 @@ const upload = async (file) => {
             break;
         }
       },
-      (error) => {},
+      (error) => {
+        reject(error);
+      },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           resolve(downloadURL);

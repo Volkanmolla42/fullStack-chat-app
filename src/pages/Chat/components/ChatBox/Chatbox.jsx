@@ -12,10 +12,16 @@ import {
 import { db } from "../../../../config/firebase";
 import { toast } from "react-toastify";
 import upload from "../../../../lib/upload";
-// eslint-disable-next-line react/prop-types
-const Chatbox = ({ toggleProfile }) => {
-  const { userData, messagesId, chatUser, messages, setMessages, chatTheme } =
-    useContext(AppContext);
+const Chatbox = () => {
+  const {
+    userData,
+    messagesId,
+    chatUser,
+    messages,
+    setMessages,
+    toggleProfile,
+    theme,
+  } = useContext(AppContext);
   const [isOnline, setIsOnline] = useState(false);
   const [input, setInput] = useState("");
 
@@ -134,7 +140,7 @@ const Chatbox = ({ toggleProfile }) => {
       if (userSnap.exists()) {
         const { lastSeen } = userSnap.data();
         const lastSeenDifference = Date.now() - lastSeen;
-        setIsOnline(lastSeenDifference <= 11000);
+        setIsOnline(lastSeenDifference <= 12000);
       }
     };
 
@@ -147,9 +153,7 @@ const Chatbox = ({ toggleProfile }) => {
     <div
       style={{
         backgroundImage: `${
-          chatTheme === "helloKitty"
-            ? "url(/hellokity3.png)"
-            : "url(/wptheme.jpg)"
+          theme === "helloKitty" ? "url(/hellokity3.png)" : "url(/wptheme.jpg)"
         }`,
       }}
       className="chat-box"
@@ -196,10 +200,12 @@ const Chatbox = ({ toggleProfile }) => {
       <div className="chat-input-area">
         <input
           autoComplete="off"
+          autoCorrect="off"
+          spellCheck="false"
+          type="search"
           inputMode="text"
           onChange={(e) => setInput(e.target.value)}
           value={input}
-          type="text"
           placeholder="Send a message.."
           className="chat-input"
           id="chat-input"

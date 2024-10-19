@@ -18,11 +18,18 @@ import { useContext, useRef, useState } from "react";
 import { AppContext } from "../../../../context/AppContext";
 import { toast } from "react-toastify";
 
-// eslint-disable-next-line react/prop-types
-const LeftSidebar = ({ isFriendsOpen, setisFriendsOpen, setProfileState }) => {
+const LeftSidebar = () => {
   const navigate = useNavigate();
-  const { userData, chatData, setChatUser, setMessagesId, messagesId } =
-    useContext(AppContext);
+  const {
+    userData,
+    chatData,
+    setChatUser,
+    setMessagesId,
+    messagesId,
+    isFriendsOpen,
+    setisFriendsOpen,
+    setisProfileOpen,
+  } = useContext(AppContext);
   const [user, setUser] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
   const [activeFriend, setActiveFriend] = useState(undefined);
@@ -177,7 +184,7 @@ const LeftSidebar = ({ isFriendsOpen, setisFriendsOpen, setProfileState }) => {
   };
 
   const handleFriendsClose = () => {
-    setProfileState(false);
+    setisProfileOpen(false);
     setisFriendsOpen(!isFriendsOpen);
   };
 
@@ -187,7 +194,7 @@ const LeftSidebar = ({ isFriendsOpen, setisFriendsOpen, setProfileState }) => {
         <div className="ls-profile">
           <img
             className="ls-profile-img"
-            onClick={() => navigate("/profile")}
+            onClick={() => navigate("/profile", { replace: true })}
             src={userData.avatar || assets.avatar_icon}
             alt="profile image"
           />

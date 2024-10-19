@@ -8,15 +8,8 @@ import "./Chat.css";
 import { AppContext } from "../../context/AppContext";
 
 const Chat = () => {
-  const [profileState, setProfileState] = useState(false);
-  const [isFriendsOpen, setisFriendsOpen] = useState(true);
-  const { chatData, userData } = useContext(AppContext);
+  const { chatData, userData, isProfileOpen } = useContext(AppContext);
   const [loading, setLoading] = useState(true);
-
-  const toggleProfile = () => {
-    setisFriendsOpen(false);
-    setProfileState(!profileState);
-  };
 
   useEffect(() => {
     if (chatData && userData) {
@@ -28,21 +21,14 @@ const Chat = () => {
       {loading ? (
         <p className="loading">Loading..</p>
       ) : (
-        <div className={`chat-container ${profileState ? "profile-open" : ""}`}>
-          <LeftSidebar
-            isFriendsOpen={isFriendsOpen}
-            setisFriendsOpen={setisFriendsOpen}
-            setProfileState={setProfileState}
-          />
-          <Chatbox
-            isFriendsOpen={isFriendsOpen}
-            setisFriendsOpen={setisFriendsOpen}
-            toggleProfile={toggleProfile}
-          />
-          <RightSidebar
-            profileState={profileState}
-            toggleProfile={toggleProfile}
-          />
+        <div
+          className={`chat-container ${
+            isProfileOpen ? "profile-open" : ""
+          } message-open`}
+        >
+          <LeftSidebar />
+          <Chatbox />
+          <RightSidebar />
         </div>
       )}
     </div>

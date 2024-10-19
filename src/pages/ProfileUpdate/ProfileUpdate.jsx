@@ -15,9 +15,9 @@ const ProfileUpdate = () => {
   const [uid, setUid] = useState("");
   const [userName, setUserName] = useState();
   const [prevImage, setPrevImage] = useState("");
-  const [isFormEdit, setIsFormEdit] = useState(false);
+  const [isFormEdit, setIsFormEdit] = useState(true);
   const [count, setCount] = useState(0);
-  const { setUserData, setChatTheme } = useContext(AppContext);
+  const { setUserData, setTheme } = useContext(AppContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,8 +31,6 @@ const ProfileUpdate = () => {
 
         if (docSnap.data().bio) setBio(docSnap.data().bio);
         if (docSnap.data().avatar) setPrevImage(docSnap.data().avatar);
-      } else {
-        navigate("/", { replace: true });
       }
     });
   }, [navigate]);
@@ -70,7 +68,7 @@ const ProfileUpdate = () => {
 
     console.log(count);
     if (count === 4) {
-      setChatTheme("helloKitty");
+      setTheme("helloKitty");
     }
   };
 
@@ -173,10 +171,10 @@ const ProfileUpdate = () => {
         </div>
 
         <div className="themes">
-          <button onClick={() => setChatTheme("light")} type="button">
+          <button onClick={() => setTheme("light")} type="button">
             Light Mode
           </button>
-          <button onClick={() => setChatTheme("dark")} type="button">
+          <button onClick={() => setTheme("dark")} type="button">
             Dark mode
           </button>
         </div>

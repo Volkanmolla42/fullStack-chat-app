@@ -124,7 +124,7 @@ textarea {
   .profile {
     padding: 0;
     margin: 0;
-    height: 100svh;
+    height: 100%;
   }
   .profile-container {
     padding: 0;

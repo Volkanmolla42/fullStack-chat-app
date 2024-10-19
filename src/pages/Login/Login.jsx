@@ -28,7 +28,6 @@ const Login = () => {
           <h2>{isNewUser ? "Sign Up" : "Log In"} </h2>
           {isNewUser ? (
             <input
-              autoFocus={true}
               autoComplete="off"
               type="text"
               placeholder="Username"

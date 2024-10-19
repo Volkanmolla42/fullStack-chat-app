@@ -4,9 +4,9 @@ import { logout } from "../../../../config/firebase";
 import "./RightSidebar.css";
 import { AppContext } from "../../../../context/AppContext";
 
-// eslint-disable-next-line react/prop-types
-const RightSidebar = ({ profileState, toggleProfile }) => {
-  const { chatUser, messages } = useContext(AppContext);
+const RightSidebar = () => {
+  const { chatUser, messages, isProfileOpen, toggleProfile } =
+    useContext(AppContext);
   const [msgImages, setMsgImages] = useState([]);
   useEffect(() => {
     setMsgImages([]);
@@ -26,7 +26,7 @@ const RightSidebar = ({ profileState, toggleProfile }) => {
 
   if (chatUser) {
     return (
-      <div className={`rs ${profileState ? "open" : ""}`}>
+      <div className={`rs ${isProfileOpen ? "open" : ""}`}>
         <div className="rs-profile">
           <button onClick={toggleProfile} className="close-profile-x">
             <img src={assets.close_icon} alt="close profile button" />

@@ -2,72 +2,27 @@
   background: var(--first-color);
   display: flex;
   flex-direction: column;
-  min-width: 300px;
-  height: 100%;
+  min-width: 290px;
+  max-height: 100svh;
   position: relative;
 }
 
 .ls-top {
-  padding: 20px 15px;
+  padding: 10px;
   cursor: default;
-}
-.close-friends {
-  margin-left: auto;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 50px;
-  transition: all 0.3s ease;
-  transform: translate(0, -10px);
-}
-
-.close-friends .bar {
-  width: 100%;
-  height: 4px;
-  background-color: var(--secondary-color);
-  margin: 3px 0;
-  transition: all 0.3s ease;
-}
-
-.close-friends .bar1 {
-  transform: translate(0, 7px) rotate(45deg);
-}
-.close-friends .bar2 {
-  opacity: 0;
-}
-.close-friends .bar3 {
-  transform: translate(0, -7px) rotate(-45deg);
-}
-
-.on-close-icon {
-  transform: translate(60px, -10px);
-}
-.on-close-icon .bar1 {
-  width: 60%;
-  transform: translate(12px, 2px) rotate(35deg);
-}
-.on-close-icon .bar2 {
-  opacity: 1;
-}
-.on-close-icon .bar3 {
-  width: 60%;
-  transform: translate(12px, -2px) rotate(-35deg);
 }
 
 .ls-profile {
   display: flex;
-  align-items: center;
   gap: 20px;
+  position: relative;
 }
 
 .ls-profile .ls-profile-img {
+  object-fit: cover;
   cursor: pointer;
-  max-width: 3rem;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
@@ -80,23 +35,60 @@
   font-size: 2rem;
   color: var(--light-secondary-color);
 }
-
-.ls-bottom .logout svg {
-  height: 1.2rem;
-  fill: var(--secondary-color);
+.close-friends {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 40px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  transform: translateY(-50%);
 }
 
-.ls-bottom .copy {
-  background-color: transparent;
-  font-size: 8px;
+.close-friends .bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--secondary-color);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+.close-friends .bar1 {
+  transform: translateY(175%) rotate(45deg);
+}
+.close-friends .bar2 {
+  opacity: 0;
+}
+.close-friends .bar3 {
+  transform: translateY(-175%) rotate(-45deg);
+}
+
+.close-friends.on-close-icon {
+  transform: translate(calc(100% + 15px), -50%);
+}
+.close-friends.on-close-icon .bar1 {
+  width: 50%;
+  transform: translate(100%, 50%) rotate(30deg);
+}
+.close-friends.on-close-icon .bar2 {
+  opacity: 1;
+}
+.close-friends.on-close-icon .bar3 {
+  width: 50%;
+  transform: translate(100%, -50%) rotate(-30deg);
 }
 
 .ls-search {
+  border-radius: 20px;
   background-color: var(--secondary-color);
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 10px;
+  padding: 10px;
   margin-top: 20px;
 }
 
@@ -118,12 +110,12 @@
 }
 
 .ls-list {
-  overflow: auto;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
   flex-grow: 1;
-  padding: 5px 10px;
-  height: 0;
+  height: 100%;
 }
 
 .friends {
@@ -247,7 +239,7 @@
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid var(--secondary-color);
-  padding: 10.5px 10px;
+  padding: 10px;
   width: 100%;
   color: var(--white-color);
 }
@@ -255,7 +247,15 @@
 .ls-bottom .logout {
   background-color: transparent;
 }
+.ls-bottom .logout svg {
+  height: 1.2rem;
+  fill: var(--secondary-color);
+}
 
+.ls-bottom .copy {
+  background-color: transparent;
+  font-size: 8px;
+}
 .ls-bottom .logout button {
   background-color: inherit;
   border: 2px solid var(--secondary-color);
@@ -272,7 +272,6 @@
 @media (max-width: 768px) {
   .ls {
     position: absolute;
-    width: 80%;
     top: 0;
     left: 0;
     bottom: 0;
