@@ -26,9 +26,8 @@ This project is a real-time chat application developed using Firebase and React.
    ```bash
    npm install
    ```
-3. Create and configure your Firebase project. Set up a new project in the Firebase console and configure the necessary settings for your application.
 
-4. Create `.env` file and add your Firebase configuration:
+3. Create `.env` file and add your Firebase configuration:
 
 VITE_FIREBASE_API_KEY= YOUR_API_KEY,
 VITE_FIREBASE_AUTH_DOMAIN= YOUR_AUTH_DOMAIN,
@@ -39,7 +38,7 @@ VITE_FIREBASE_APP_ID = YOUR_APP_ID
 
 ````
 
-5. Start the application:
+4. Start the application:
 ```bash
 npm run dev
 ````
