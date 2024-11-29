@@ -38,10 +38,10 @@ This project is a real-time chat application developed using Firebase and React.
 
 ````
 
-4. Start the application:
-```bash
-npm run dev
-````
+4.Start the application:
+   ```bash
+ npm run dev
+   ```
 
 ## Usage
 
