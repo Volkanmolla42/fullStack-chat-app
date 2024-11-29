@@ -44,8 +44,9 @@ This project is a real-time chat application developed using Firebase and React.
 ## Usage
 
 - Create a user account or log in.
+- Edit your profile.
 - Search for other users with username and chat with them.
-- View your online status while messaging.
+  
 
 ## License
 
