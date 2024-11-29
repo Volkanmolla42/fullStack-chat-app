@@ -42,3 +42,8 @@ img.dot {
   width: 1.3rem;
   margin: auto;
 }
+
+img {
+  max-height: 350px;
+  object-fit: cover;
+}

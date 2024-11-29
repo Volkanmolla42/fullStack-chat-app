@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import assets from "../../../../assets/assets";
-import { logout } from "../../../../config/firebase";
 import "./RightSidebar.css";
 import { AppContext } from "../../../../context/AppContext";
 
@@ -15,14 +14,6 @@ const RightSidebar = () => {
       .map((msg) => msg.image);
     setMsgImages(tempArray);
   }, [messages]);
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.error("Logout error:", error);
-    }
-  };
 
   if (chatUser) {
     return (
@@ -57,9 +48,6 @@ const RightSidebar = () => {
             )}
           </div>
         </div>
-        <button className="logout-btn" onClick={handleLogout}>
-          Logout
-        </button>{" "}
       </div>
     );
   }
