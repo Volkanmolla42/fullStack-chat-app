@@ -59,6 +59,7 @@ npm run dev
 <img src="public/phone-ss3.jpeg" alt="Proje Ekran Görüntüsü" width="150">
 <img src="public/phone-ss1.jpeg" alt="Proje Ekran Görüntüsü" width="150">
 </div>
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
