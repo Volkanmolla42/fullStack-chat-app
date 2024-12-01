@@ -53,11 +53,11 @@ npm run dev
 ## Mobile support
 
 <div style="display: flex; gap: 2px;">
-<img src="public/phone-ss5.jpeg" alt="Proje Ekran Görüntüsü" width="100">
-<img src="public/phone-ss4.jpeg" alt="Proje Ekran Görüntüsü" width="100">
-<img src="public/phone-ss2.jpeg" alt="Proje Ekran Görüntüsü" width="100">
-<img src="public/phone-ss3.jpeg" alt="Proje Ekran Görüntüsü" width="100">
-<img src="public/phone-ss1.jpeg" alt="Proje Ekran Görüntüsü" width="100">
+<img src="public/phone-ss5.jpeg" alt="Proje Ekran Görüntüsü" width="150">
+<img src="public/phone-ss4.jpeg" alt="Proje Ekran Görüntüsü" width="150">
+<img src="public/phone-ss2.jpeg" alt="Proje Ekran Görüntüsü" width="150">
+<img src="public/phone-ss3.jpeg" alt="Proje Ekran Görüntüsü" width="150">
+<img src="public/phone-ss1.jpeg" alt="Proje Ekran Görüntüsü" width="150">
 </div>
 ## License
 
