@@ -1,6 +1,5 @@
 import avatar_icon from "./avatar_icon.png";
 import gallery_icon from "./sendimage-icon.svg";
-import profile_img from "./profile_richard.png";
 import search_icon from "./search_icon.png";
 import send_button from "./send-msg-icon.svg";
 import add_icon from "./add_icon.png";
@@ -15,7 +14,6 @@ const assets = {
   avatar_icon,
   gallery_icon,
   logout_icon,
-  profile_img,
   search_icon,
   send_button,
   add_icon,

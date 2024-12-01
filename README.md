@@ -23,6 +23,7 @@ This project is a real-time chat application developed using Firebase and React.
    cd fullStack-chat-app
    ```
 2. Install the required dependencies:
+
    ```bash
    npm install
    ```
@@ -48,6 +49,8 @@ npm run dev
 - Create a user account or log in.
 - Search for other users with username and chat with them.
 - View your online status while messaging.
+
+![Telefon Ekran Görüntüsü](/public/phone-ss1.jpeg)
 
 ## License
 
