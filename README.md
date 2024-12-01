@@ -52,11 +52,13 @@ npm run dev
 
 ## Mobile support
 
+<div style="display: flex; gap: 2px;">
 <img src="public/phone-ss5.jpeg" alt="Proje Ekran Görüntüsü" width="100">
 <img src="public/phone-ss4.jpeg" alt="Proje Ekran Görüntüsü" width="100">
-<img src="public/phone-ss2.jpeg.jpeg" alt="Proje Ekran Görüntüsü" width="100">
-<img src="public/phone-ss3.jpeg.jpeg" alt="Proje Ekran Görüntüsü" width="100">
-<img src="public/phone-ss1.jpeg.jpeg" alt="Proje Ekran Görüntüsü" width="100">
+<img src="public/phone-ss2.jpeg" alt="Proje Ekran Görüntüsü" width="100">
+<img src="public/phone-ss3.jpeg" alt="Proje Ekran Görüntüsü" width="100">
+<img src="public/phone-ss1.jpeg" alt="Proje Ekran Görüntüsü" width="100">
+</div>
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
