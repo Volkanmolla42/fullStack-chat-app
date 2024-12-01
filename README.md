@@ -27,28 +27,27 @@ This project is a real-time chat application developed using Firebase and React.
    ```bash
    npm install
    ```
-
 3. Create `.env` file and add your Firebase configuration:
-
-VITE_FIREBASE_API_KEY= YOUR_API_KEY,
-VITE_FIREBASE_AUTH_DOMAIN= YOUR_AUTH_DOMAIN,
-VITE_FIREBASE_PROJECT_ID= YOUR_PROJECT_ID,
-VITE_FIREBASE_STORAGE_BUCKET= YOUR_STORAGE_BUCKET
-VITE_FIREBASE_MESSAGING_SENDER_ID= YOUR_MESSAGING_SENDER_ID
-VITE_FIREBASE_APP_ID = YOUR_APP_ID
-
-````
-
-4. Start the application:
-```bash
-npm run dev
-````
+  ```bash
+   VITE_FIREBASE_API_KEY= YOUR_API_KEY
+   VITE_FIREBASE_API_KEY= YOUR_API_KEY
+   VITE_FIREBASE_AUTH_DOMAIN= YOUR_AUTH_DOMAIN
+   VITE_FIREBASE_PROJECT_ID= YOUR_PROJECT_ID
+   VITE_FIREBASE_STORAGE_BUCKET= YOUR_STORAGE_BUCKET
+   VITE_FIREBASE_MESSAGING_SENDER_ID= YOUR_MESSAGING_SENDER_ID
+   VITE_FIREBASE_APP_ID = YOUR_APP_ID
+   ```
+4.Start the application:
+   ```bash
+ npm run dev
+   ```
 
 ## Usage
 
 - Create a user account or log in.
+- Edit your profile.
 - Search for other users with username and chat with them.
-- View your online status while messaging.
+  
 
 ![Telefon Ekran Görüntüsü](/public/phone-ss1.jpeg)
 
