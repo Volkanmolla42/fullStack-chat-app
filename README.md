@@ -12,6 +12,17 @@ A real-time chat application built with **Firebase** and **React.js**. Users can
 
 ---
 
+## Screenshots
+
+<div style="display: flex; gap: 8px;">
+  <img src="public/ss1.jpeg" alt="Screenshot 1" width="200">
+  <img src="public/ss4.jpeg" alt="Screenshot 1" width="200">
+  <img src="public/ss2.jpeg" alt="Screenshot 1" width="200">
+  <img src="public/ss3.jpeg" alt="Screenshot 1" width="200">
+</div>
+
+---
+
 ## Technologies Used
 
 - **Frontend**: React.js
@@ -74,7 +85,7 @@ Follow the steps below to set up the application:
 
 The application is fully responsive and optimized for mobile devices. Below are some mobile UI screenshots:
 
-<div style="display: flex; gap: 2px;">
+<div style="display: flex; gap: 8px;">
   <img src="public/phone-ss5.jpeg" alt="Screenshot 1" width="150">
   <img src="public/phone-ss4.jpeg" alt="Screenshot 2" width="150">
   <img src="public/phone-ss2.jpeg" alt="Screenshot 3" width="150">
