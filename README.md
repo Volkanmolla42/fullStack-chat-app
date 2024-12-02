@@ -6,9 +6,15 @@ A real-time chat application built with **Firebase** and **React.js**. Users can
 
 ## Features
 
+- **Fully Responsive Design**: The application adapts seamlessly across devices, ensuring optimal use on **desktops**, **tablets**, and **smartphones**.
 - **Real-Time Messaging**: Messages are updated instantly using **Firebase Realtime Database**.
 - **User Registration and Login**: Account creation and authentication are handled via **Firebase Authentication**.
-- **Online Status Tracking**: Displays users' online status using the `lastSeen` field.
+- **Photo Sending**: Users can **send photos** through the chat, with storage managed by **Firebase Storage**.
+- **Online Status**: Displays users' **online status** using the **lastSeen** field in **Firebase Realtime Database**.
+- **Password Reset**: Allows users to reset **their passwords** via **Firebase Authentication**.
+- **User Profile Management**: Users can manage their profiles, including **username and avatar**, stored in Firebase Firestore.
+- **Chat History**: Chats are stored and retrievable, ensuring that users can view past conversations.
+- **Changeable Theme**: Users can toggle between **light, dark and special HelloKity theme mode**, enhancing the visual experience
 
 ---
 
@@ -92,20 +98,6 @@ Follow the steps below to set up the application:
 
 3. **Check Online Status**:
    View the online status of users in real-time while messaging.
-
----
-
-## Mobile Support
-
-The application is fully responsive and optimized for mobile devices. Below are some mobile UI screenshots:
-
-<div style="display: flex; gap: 8px;">
-  <img src="public/phone-ss5.jpeg" alt="Screenshot 1" width="150">
-  <img src="public/phone-ss4.jpeg" alt="Screenshot 2" width="150">
-  <img src="public/phone-ss2.jpeg" alt="Screenshot 3" width="150">
-  <img src="public/phone-ss3.jpeg" alt="Screenshot 4" width="150">
-  <img src="public/phone-ss1.jpeg" alt="Screenshot 5" width="150">
-</div>
 
 ---
 
